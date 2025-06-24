@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        header {
+            background-color: #999933;
+            text-align: center;
+            padding: 20px;
+            font-size: 80px;
+        }
+
+        .attendance {
+            background-color: white;
+            height: auto;
+            gap: 20px;
+            display: flex;
+            padding: 20px;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .info {
+            height: auto;
+            width: 250px;
+            padding: 20px;
+            background-color: #cccc99;
+            font-size: 150%;
+            text-align: center;
+        }
+
+        .response {
+            width: 300px;
+            background-color: #cccc99;
+            padding: 20px;
+            text-align: center;
+        }
+
+        input, button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            font-size: 16px;
+            padding: 5px;
+        }
+
+        h1.message {
+            width: 100%;
+            display: none;
+            padding: 10px;
+            color: white;
+            margin-top: 10px;
+        }
+
+        #arrivalMsg {
+            background-color: blue;
+        }
+
+        #departureMsg {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <header>ATTENDANCE</header>
+
+    <div class="attendance">
+        <!-- Info Form -->
+        <div class="info">
+            <label><b>Full name</b></label>
+            <input type="text" placeholder="Full name" name="name" required>
+
+            <label><b>Today's date</b></label>
+            <input type="date" name="date" required>
+
+            <label><b>Department</b></label>
+            <input type="text" placeholder="Department" name="department" required>
+
+            <label><b>Position</b></label>
+            <input type="text" placeholder="Position" name="position" required>
+
+            <button type="submit">Submit</button>
+        </div>
+
+        <!-- Arrival Time -->
+        <div class="response">
+            <label><b>Arrival Time</b></label>
+            <input type="time" id="arrivalTime">
+            <button id="arrivalBtn">Click to see arrival message!</button>
+            <h1 class="message" id="arrivalMsg"></h1>
+        </div>
+
+        <!-- Departure Time -->
+        <div class="response">
+            <label><b>Departure Time</b></label>
+            <input type="time" id="departureTime">
+            <button id="departureBtn">Click to see departure message!</button>
+            <h1 class="message" id="departureMsg"></h1>
+        </div>
+    </div>
+
+    <script>
+        // Get references to DOM elements
+        const arrivalBtn = document.getElementById('arrivalBtn');
+        const arrivalMsg = document.getElementById('arrivalMsg');
+        const departureBtn = document.getElementById('departureBtn');
+        const departureMsg = document.getElementById('departureMsg');
+
+        // Event for arrival button
+        arrivalBtn.addEventListener('click', function () {
+            const arrivalTime = document.getElementById('arrivalTime').value;
+
+            if (!arrivalTime) {
+                arrivalMsg.innerText = 'Please enter arrival time!';
+                arrivalMsg.style.display = 'block';
+                return;
+            }
+
+            if (arrivalTime <= "08:30") {
+                arrivalMsg.innerText = 'WELCOME!';
+            } else {
+                arrivalMsg.innerText = 'NEXT TIME BE EARLY!';
+            }
+
+            arrivalMsg.style.display = 'block';
+        });
+
+        // Event for departure button
+        departureBtn.addEventListener('click', function () {
+            const departureTime = document.getElementById('departureTime').value;
+
+            if (!departureTime) {
+                departureMsg.innerText = 'Please enter departure time!';
+                departureMsg.style.display = 'block';
+                return;
+            }
+
+            if (departureTime >= "16:00") {
+                departureMsg.innerText = 'SEE YOU TOMORROW!';
+            } else {
+                departureMsg.innerText = 'WHY?';
+            }
+
+            departureMsg.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

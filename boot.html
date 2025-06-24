@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <style>
+            html,body{
+                margin: 0;
+                padding: 0;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+            .header{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
+                background-color: #edd6bf;
+            }
+            .tittle{
+                margin: 0;
+                font-style: italic;
+                font-family: 'Courier New', Courier, monospace;
+                font-weight: bolder ;
+                font-size: 25px;
+                color: rgb(143, 28, 143);
+            }
+            .info a{
+                display: inline-block;
+                padding: 14px 20px;
+                color: rgb(8, 8, 8);
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-align: center;
+                text-decoration: none;
+            }
+            .info a:hover{
+                color: rgb(143, 28, 143);
+                background-color: #cb7579;
+            }
+            .active{
+                background-color: #cb7579;
+            }
+            .info i{
+                margin-right: 6px;
+            }
+            .all-boot{
+                display: flex;
+                flex-direction: row;
+                padding: 30px;
+                background-color: #edd6bf;
+            }
+
+            img {
+                width: 450px;
+                height: 480px;
+                object-fit: cover;
+                border-radius: 100%;
+
+            }
+            .big-text{
+                text-align: center;
+                margin-top: 80px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                flex-wrap: wrap;
+            }
+            h3{
+                font-size: 40px;
+            }
+            p{
+                font-size: 20px;
+            }
+            .button{
+                font-size: 20px;
+                color: black;
+                background-color: #edd6bf;
+                border: solid;
+                font-weight: bolder;
+                border-radius: 150px;
+            }
+        </style>
+    <div class="header">
+        <div class="tittle">
+            <h3>DE-LOG</h3>
+        </div>
+        <div class="info">
+            <a href="#" class="active">Home</a>
+            <a href="#">About us</a>
+            <a href="#">Contact us</a>
+            <a href="#">Shop</a>
+            <a href="#">My account</a>
+        </div>
+    </div>
+    <div class="all-boot">
+        <div class="boot">
+            <img src="booted\boot1.jpeg" alt="boots">
+        </div>
+        <div class="big-text">
+            <h3>Feel confident and look amazing with boots from DE-LOG</h3>
+            <p>Available and ready for delivery in all sizes</p>
+            <button class="button" onclick="alert('Thanks for shopping with us')">Order Now</button>
+        </div>
+    </div>
+    </body>
+</html>
